@@ -52,8 +52,6 @@ typedef int  ( API * WTPACKETSGET ) (HCTX, int, LPVOID);
 // TODO - add more wintab32 function defs as needed
 
 //////////////////////////////////////////////////////////////////////////////
-extern char* gpszProgramName;
-
 // Loaded Wintab32 API functions.
 extern HINSTANCE ghWintab;
 
@@ -79,8 +77,6 @@ extern WTPACKETSGET gpWTPacketsGet;
 //////////////////////////////////////////////////////////////////////////////
 BOOL LoadWintab( void );
 void UnloadWintab( void );
-
-void ShowError( char *pszErrorMessage );
 
 //////////////////////////////////////////////////////////////////////////////
 #ifdef WACOM_DEBUG

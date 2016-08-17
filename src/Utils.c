@@ -73,7 +73,7 @@ BOOL LoadWintab( void )
 	{
 		DWORD err = GetLastError();
 		WACOM_TRACE("LoadLibrary error: %i\n", err);
-		ShowError("Could not load Wintab32.dll");
+		OutputDebugStringA("Could not load Wintab32.dll");
 		return FALSE;
 	}
 
@@ -137,23 +137,6 @@ void UnloadWintab( void )
 	gpWTDataPeek		= NULL;
 	gpWTPacketsGet		= NULL;
 }
-
-
-
-//////////////////////////////////////////////////////////////////////////////
-// Purpose
-//		Display error to user.
-//
-void ShowError( char *pszErrorMessage )
-{
-	WACOM_TRACE( "ShowError()\n" );
-
-	WACOM_ASSERT( pszErrorMessage );
-
-	MessageBoxA( NULL, pszErrorMessage, gpszProgramName, MB_OK | MB_ICONHAND );
-}
-
-
 
 #ifdef WACOM_DEBUG
 
